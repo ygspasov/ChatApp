@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
     <MainScreen msg="Welcome to Your Vue.js App" />
   </div>
 </template>
@@ -12,7 +11,7 @@ import MainScreen from "@/components/MainScreen.vue";
 export default {
   name: "Home",
   components: {
-    MainScreen,
-  },
+    MainScreen
+  }
 };
 </script>
