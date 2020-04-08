@@ -21,10 +21,17 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
-    path: "/chat-window",
+    path: "/chat",
     name: "ChatWindow",
     component: ChatWindow,
     props: true,
+    beforeEnter: (to, from, next) => {
+      if (to.params.name) {
+        next();
+      } else {
+        next({ name: "Home" });
+      }
+    },
   },
 ];
 
