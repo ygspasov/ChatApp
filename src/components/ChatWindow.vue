@@ -9,8 +9,8 @@
           <ul class="pl-0 mb-2" v-for="(msg, i) in messages" :key="i">
             <li>
               <p>
-                <span class="title">{{ msg.name }}:</span>
-                <span class="subtitle-1 pl-1">{{ msg.message }}</span>
+                <span class="subtitle-1 font-weight-regular">{{ msg.name }}:</span>
+                <span class="title pl-1">{{ msg.message }}</span>
               </p>
               <p class="subtitle-2">{{ msg.time }}</p>
             </li>
@@ -25,7 +25,9 @@
         ></v-text-field>
         <p class="errorMsg mx-4 red--text">{{ this.error }}</p>
         <v-card-actions>
-          <v-btn text color="deep-purple accent-4" @click="addMessage">Send</v-btn>
+          <div class="mx-2">
+            <v-btn color="primary" @click="addMessage">Send</v-btn>
+          </div>
         </v-card-actions>
       </v-card>
     </v-row>
