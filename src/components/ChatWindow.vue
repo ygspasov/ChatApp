@@ -1,7 +1,7 @@
 <template>
   <v-container id="chat-window">
     <v-row>
-      <h1 class="mx-auto mb-3">Chat as {{ name }}</h1>
+      <h1 class="mx-auto my-5">Chat as {{ name }}</h1>
     </v-row>
     <v-row id="messages" v-chat-scroll>
       <v-card class="mx-auto" max-width="344">
@@ -67,7 +67,6 @@ export default {
     messages.onSnapshot(data => {
       data.docChanges().forEach(change => {
         if (change.type === "added") {
-          console.log("New record: ", change.doc.data());
           this.messages.push({
             id: change.doc.id,
             name: change.doc.data().name,
@@ -87,5 +86,8 @@ ul {
 #messages {
   max-height: 600px;
   overflow: auto;
+}
+#chat-window {
+  max-width: 400px;
 }
 </style>
